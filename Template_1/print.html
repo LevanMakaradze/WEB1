@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ka">
+	<head>
+		<meta charset="utf-8">
+		<title>Blood Monitoring(print)</title>
+		<style type="text/css">
+		header{
+			background-color: #33cc33;
+			height: 100px;
+			text-align: center;
+			padding-top: 20px;
+		}
+		section{
+			background-color: #e0e0d1;
+			height: 400px;
+		}
+		footer{
+		    background-color: #33cc33;
+			height: 50px;
+			text-align: center;
+			
+		}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>სისხლში გლიკემიის მონიტორინგი(print)</h1>
+		</header>
+		<section>
+			<article>
+				<script>
+					let query = location.search;
+					console.log(query);//alert(query);
+					query = query.substring(1,query.length);
+					console.log(query);
+					let querySplit = query.split("&");
+					console.log(querySplit);
+					let Pmpn = querySplit[0].split("=")[1];
+					console.log("Pmpn = " + Pmpn);
+					
+					let Fname = querySplit[1].split("=")[1];
+					console.log("Fname = " + Fname);
+					let Lname = querySplit[2].split("=")[1];
+					console.log("Lname = " + Lname);
+					let TariRi = querySplit[3].split("=")[1];
+					console.log("TariRi = " + TariRi);
+					let Uzmomin = querySplit[4].split("=")[1] * 1;
+					console.log("Uzmomin = " + Uzmomin);
+					let uzmomax = querySplit[5].split("=")[1] * 1;
+					console.log("uzmomax = " + uzmomax);
+					let samxarimin = querySplit[6].split("=")[1] * 1;
+					console.log("samxarimin = " + samxarimin);
+					let samxarimax = querySplit[7].split("=")[1] * 1;
+					console.log("samxarimax = " + samxarimax);
+					let sadilimin = querySplit[8].split("=")[1] * 1;
+					console.log("sadilimin = " + sadilimin);
+					let sadilimax = querySplit[9].split("=")[1] * 1;
+					console.log("sadilimax = " + sadilimax);
+					let vaxSamimin = querySplit[10].split("=")[1] * 1;
+					console.log("vaxSamimin = " + vaxSamimin);
+					let vaxSamimax = querySplit[11].split("=")[1] * 1;
+					console.log("vaxSamimax = " + vaxSamimax);
+				</script>
+				<!--<form action="print.html" method="get">-->
+					<table border=0 align="center">
+					  <tr>
+					    <td>პირადობა(11 ციფრი):</td>
+						<td> <input type="text" maxlength="11" id="pmpn"></td>
+					  </tr>
+					  <tr>
+					    <td>სახელი:</td>
+						<td><input type="text" id="fname"><td>
+					  </tr>
+					  <tr>
+					    <td>გვარი:</td>
+						<td><input type="text"  id="lname"><td>
+					  </tr>
+					  <tr>
+					    <td>თარიღი:</td>
+						<td><input type="date"  id="tarigi"><td>
+					  </tr>
+					  <tr>
+					    <td>გლიკემია 09:00(უზმო):</td>
+						<td>
+						  <input type="number" min="1" max="700" id="uzmo_1"> 
+						  11:00<input type="number" min="1" max="700" id="uzmo_2">
+						<td>
+					  </tr>
+					 <tr>
+					    <td>გლიკემია 12:00(სამხარი):</td>
+						<td>
+						  <input type="number" min="1" max="700" id="samxari_1"> 
+						  14:00<input type="number" min="1" max="700" id="samxari_2">
+						<td>
+					  </tr>
+					  <tr>
+					    <td>გლიკემია 15:00(სადილი):</td>
+						<td>
+						  <input type="number" min="1" max="700" id="sadili_1"> 
+						  17:00<input type="number" min="1" max="700" id="sadili_2">
+						<td>
+					  </tr>
+					  <tr>
+					    <td>გლიკემია 20:00(ვახშამი):</td>
+						<td>
+						  <input type="number" min="1" max="700" id="vaxSami_1"> 
+						  22:00<input type="number" min="1" max="700" id="vaxSami_2">
+						<td>
+					  </tr>
+					  <tr>
+					    <td align="right"><h3>საშუალო = </h3></td>
+						<td><h3 id="saSualo"></h3><td>
+					  </tr>
+					<table>
+					<script>
+						document.getElementById("pmpn").value      = Pmpn;
+						document.getElementById("fname").value     = Fname;
+						document.getElementById("lname").value     = Lname;
+						document.getElementById("tarigi").value    = TariRi;
+						document.getElementById("uzmo_1").value    = Uzmomin;
+						document.getElementById("uzmo_2").value    = uzmomax;
+						document.getElementById("samxari_1").value = samxarimin;
+						document.getElementById("samxari_2").value = samxarimax;
+						document.getElementById("sadili_1").value  = sadilimin;
+						document.getElementById("sadili_2").value  = sadilimax;
+						document.getElementById("vaxSami_1").value = vaxSamimin;
+						document.getElementById("vaxSami_2").value = vaxSamimax;
+						
+						let min_saSualo = (Uzmomin + samxarimin + sadilimin + vaxSamimin)/4;
+						let max_saSualo = (uzmomax + samxarimax + sadilimax + vaxSamimax)/4;
+						document.getElementById("saSualo").innerHTML = min_saSualo + " : " + max_saSualo;
+					</script>
+				<!--</form>-->
+			</article>
+		</section>
+		<footer>
+			<h2>&copy;ყველა უფლება დაცულია 2023</h2>
+		</footer>
+	</body>
+</html>
