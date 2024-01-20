@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ka">
+	<head>
+		<meta charset="utf-8">
+		<title>Blood Monitoring</title>
+		<style type="text/css">
+		header{
+			background-color: #33cc33;
+			height: 100px;
+			text-align: center;
+		}
+		section{
+			background-color: #e0e0d1;
+			height: 400px;
+		}
+		footer{
+		    background-color: #33cc33;
+			height: 50px;
+			text-align: center;
+		}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>სისხლში გლიკემიის მონიტორინგი</h1>
+		</header>
+		<section>
+			<article>
+				<form action="print.html" method="get">
+					<table border=0 align="center">
+					  <tr>
+					    <td>პირადობა(11 ციფრი):</td>
+						<td> <input type="text" name="Pmpn" maxlength="11"></td>
+					  </tr>
+					  <tr>
+					    <td>სახელი:</td>
+						<td><input type="text" name="Fname"><td>
+					  </tr>
+					  <tr>
+					    <td>გვარი:</td>
+						<td><input type="text" name="Lname"><td>
+					  </tr>
+					  <tr>
+					    <td>თარიღი:</td>
+						<td><input type="date" name="TariRi"><td>
+					  </tr>
+					  <tr>
+					    <td>გლიკემია 09:00(უზმო):</td>
+						<td><input type="number" name="Uzmomin" min="1" max="700"> 11:00<input type="number" name="uzmomax" min="1" max="700"><td>
+					  </tr>
+					 <tr>
+					    <td>გლიკემია 12:00(სამხარი):</td>
+						<td><input type="number" name="samxarimin" min="1" max="700"> 14:00<input type="number" name="samxarimax" min="1" max="700"><td>
+					  </tr>
+					  <tr>
+					    <td>გლიკემია 15:00(სადილი):</td>
+						<td><input type="number" name="sadilimin" min="1" max="700"> 17:00<input type="number" name="sadilimax" min="1" max="700"><td>
+					  </tr>
+					  
+					   <tr>
+					    <td>გლიკემია 20:00(ვახშამი):</td>
+						<td><input type="number" name="vaxSamimin" min="1" max="700"> 22:00<input type="number" name="vaxSamimax" min="1" max="700"><td>
+					  </tr>
+					  <tr>
+					    <td><input type="reset" value="გასუფთავება"></td>
+						<td><input type="submit" value="დასტური"><td>
+					  </tr>
+					<table>
+				</form>
+			</article>
+		</section>
+		<footer>
+			<h2>&copy;ყველა უფლება დაცულია 2023</h2>
+		</footer>
+	</body>
+</html>
